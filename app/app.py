@@ -6,9 +6,12 @@ app = Flask(__name__)
 def index():
     #return "<h1>Hola mundo desde Flask que tal</h1>"
 
+    cursos = ["PHP","Python","Java","Javascript","C#","C++","go","kotlin"]
     data = {
         "Titulo": "Index",
-        "bienvenida": "Saludos!!!"
+        "bienvenida": "Saludos!!!",
+        "cursos": cursos,
+        "numero_cursos": len(cursos)
     }
 
     return render_template("index.html",data=data)

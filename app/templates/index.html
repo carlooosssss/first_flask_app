@@ -11,5 +11,11 @@
     <h2>{{ data.Titulo }}</h2>
     <h2>{{ data.bienvenida }}</h2>
 
+    <ul>
+        {% for c in data.cursos %}
+        <li>{{ c }}</li>
+        {% endfor %}
+    </ul>
+
 </body>
 </html>
