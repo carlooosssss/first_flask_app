@@ -1,21 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
-</head>
-<body>
-    <h1>Hola mundo desde plantilla de Flask!!!</h1>
-    <h2>{{ data }}</h2>
-    <h2>{{ data.Titulo }}</h2>
-    <h2>{{ data.bienvenida }}</h2>
+{%extends "./layout.html" %}
 
+{% block title%}{{data.titulo}}{%endblock%}
+
+{%block body%}
+<h1>Hola mundo desde flask!!!</h1>
+<!-- <h2>{{ data }}</h2>
+<h2>{{ data.Titulo }}</h2> -->
+<h2>{{ data.bienvenida }}</h2>
+{% if data.numero_cursos > 0%}
     <ul>
         {% for c in data.cursos %}
         <li>{{ c }}</li>
         {% endfor %}
     </ul>
-
-</body>
-</html>
+{%else%}
+    <h2>No hay Datos</h2>
+{%endif%}
+{%endblock%}
